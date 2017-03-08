@@ -15,6 +15,9 @@ DIV = document.getElementById('div');
 // }
 
 
+
+
+// Pour afficher une image correspondante à la température
 function getinput()
 {
 var input = document.getElementById("input").value;
@@ -29,24 +32,21 @@ var input = document.getElementById("input").value;
 	}
 } 129
 
-
-
-// function adinput(){
-// var input = document.getElementById("input").value;
-// 	if (input != null){
-// 	myArray.push(input);
-// 	document.getElementById('recup').innerHTML = myArray.sort();
-// 	}
-// }
-
-
+// Pour ranger les entrées par ordre croissant
 function adinput() {
 	var input = document.getElementById("input").value;
-	if (input != null){
-	myArray.push(input);
-    myArray.sort(function(a, b){return a-b});
+		if (input != null){
+			myArray.push(input);
+    		myArray.sort(function(a, b){return a-b});
     document.getElementById('recup').innerHTML = myArray;
-	document.getElementById('afficher').innerHTML =(myArray.length[0] && myArray.length[-1])
-
 	}
 }
+
+// Pour afficher la première et dernière température du tableau
+function premder() {
+	var prem = myArray[0];
+	var der = myArray[myArray.length-1];
+	document.getElementById('premier').innerHTML = prem;
+	document.getElementById('dernier').innerHTML = der;
+}
+
